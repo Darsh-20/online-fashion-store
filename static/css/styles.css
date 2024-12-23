@@ -1,0 +1,122 @@
+
+/* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: #333;
+    text-align: center;
+}
+
+/* Header Styling */
+header {
+    background-color: #e45000; /* Orange */
+    color: white;
+    padding: 20px;
+}
+
+header nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Section Styling */
+main {
+    padding: 2rem;
+    background-color: white;
+    color: #e45000; /* Orange */
+}
+
+/* Product Catalog Styling */
+#products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.product-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+    width: 30%;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+button.add-to-cart {
+    background-color: #e45000; /* Orange */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button.add-to-cart:hover {
+    background-color: #d44000;
+}
+
+/* Cart Container Styling */
+#cart-container {
+    width: 25%;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+}
+
+#cart-items {
+    margin-top: 10px;
+}
+
+#cart-items p {
+    margin: 10px 0;
+}
+
+/* Footer Section */
+footer {
+    background-color: #e45000; /* Orange */
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+h2 {
+    color: #e45000;
+}
+
+h3 {
+    color: #e45000;
+}

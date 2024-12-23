@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <h1>Welcome to the Home Page</h1>
+    <header>
+        <nav>
+            <a href="/product_men">Men</a> |
+            <a href="/product_catalog">Women</a> |
+            <a href="/about">About</a> |
+            <a href="/contact">Contact</a> |
+            <a href="/Cart">Cart</a> |
+            <a href="/logout">logout</a> |
+            <a href="/profile">user profile</a> |  
+        </nav>
+    </header>
+    <main>
+        <h1>Welcome to Online Store!</h1>
+        <p>Your one-stop shop for the latest fashion trends, stunning accessories, and elegant watches. Shop now and elevate your style!</p>
+
+        <h2>Fashion That Speaks</h2>
+        <p>Discover our collection of stylish and comfortable clothing. Perfect for every occasion!</p>
+        
+        <h2>Accessories That Shine</h2>
+        <p>Add a touch of elegance to your outfit with our handpicked selection of accessories.</p>
+        
+        <h2>Timeless Elegance</h2>
+        <p>Explore our range of premium watches and find the perfect match for your wrist.</p>
+        
+        <a href="/products" class="shop-now-btn">Shop Now</a>
+        <div style="text-align: center; margin-top: 20px;">
+            <button onclick="window.location.href='/product_men'" style="padding: 10px 20px; margin: 10px; font-size: 16px;">Men</button>
+            <button onclick="window.location.href='/product_catalog'" style="padding: 10px 20px; margin: 10px; font-size: 16px;">Women</button>
+        </div>
+        <p>🚚 Enjoy Free Shipping on orders over 500 EGP!</p>
+        <p>🛒 Shop Now and Get Exclusive Discounts!</p>
+        <p>💳 Secure Payments, Hassle-Free Returns.</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 online store. All rights reserved.</p>#
+    </footer>
+    <script src="{{ url_for('static', filename='js/document.js') }}"></script>
+</body>
+</html>
+
+

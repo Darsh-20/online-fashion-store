@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Men</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Products Men</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/product_catalog">Products Men</a>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div id="products-container">
+                {% for product in products %}
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}"
+                        class="product-image">
+                    <h3>{{ product.name }}</h3>
+                    <p>Category: {{ product.category }}</p>
+                    <p>Price: {{ product.price }} EGP</p>
+                    <p>{{ product.description }}</p>
+                    <button class="add-to-cart" data-id="{{ product.id }}">Add to Cart</button>
+                </div>
+                {% endfor %}
+            </div>
+            <div id="cart-container">
+                <h2>Your Cart</h2>
+                <div id="cart-items">
+                    <p>Your cart is empty.</p>
+                </div>
+                <h3>Total: <span id="total-price">0</span> EGP</h3>
+            </div>
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="product-container">
+        <div class="product-image">
+            <img src="{{ url_for('static', filename='images/black_hoody.jpg') }}" alt="Product Image" class="product-image">
+        </div>
+        <div class="product-details">
+            <h1>{{ product.name }}</h1>
+            <p class="price"> EGY{{ product.price }}</p>
+            <p class="description">{{ product.description }}</p>
+            
+            <!-- دوائر لاختيار الألوان -->
+            <div class="color-options">
+                <h3>Color</h3>
+                {% for color in product.colors %}
+                <div class="color-circle" style="background-color: '{{ color }}'" onclick="changeColor('{{ color }}', 'color{{ loop.index }}')">
+                    <span class="checkmark">&#10003;</span>
+                </div>
+                {% endfor %}
+            </div>
+            </div>
+
+            <!-- مدخل مخفي لتخزين اللون المختار -->
+            <input type="hidden" id="color" value="{{ product.colors[0] }}">
+
+            <button class="buy-btn" onclick="buyProduct()">Buy Now</button>
+        </div>
+    </div>
+
+    <script>
+        // تغيير لون المنتج بناءً على اللون المختار
+        function changeColor(color, colorId) {
+            // إزالة علامة الصح من كل الألوان
+            const allColors = document.querySelectorAll('.color-circle');
+            allColors.forEach(function(colorElement) {
+                colorElement.classList.remove('selected');
+            });
+            
+            // إضافة علامة الصح للون الذي تم اختياره
+            const selectedColor = document.getElementById(colorId);
+            selectedColor.classList.add('selected');
+            
+            // تحديث قيمة اللون في المدخل المخفي
+            document.getElementById('color').value = color;
+        }
+    </script>
+</body>
+</html>
